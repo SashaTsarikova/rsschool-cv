@@ -1,6 +1,6 @@
 * __1.Tsarikova Aleksandra__
 * 2.tel.+375291110726; E-mail : sashatsarikova@mail.ru
-* 3._I'm really inspired about proramming so my goal is to make the wishes if real coding true._
+* 3._I'm really inspired about proramming so my goal is to make the wishes of real coding true._
 * 4.I have knolages in basics of HTML, CSS and JavaScript.
 * 5.My example of code is:
 ```
