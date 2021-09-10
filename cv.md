@@ -15,7 +15,7 @@ I’m just in the beginning on the path to “programming leadership”. I
 ***
  ***
 
-The example of my code on CodeWars is bellow
+The example of my code on CodeWars could be found bellow
 
         function spinWords(string){
         if (string.indexOf(' ')){
