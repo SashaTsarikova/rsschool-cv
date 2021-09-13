@@ -11,7 +11,7 @@ html {
 }
 
 body {
-    background-image: url(rsschool-cv/pictures/background.jpg);
+    background-image: url(/rsschool-cv/pictures/background.jpg);
     z-index: 1;
 }
 
@@ -124,7 +124,7 @@ main h3 {
     /* grid-auto-rows: minmax(300px, auto); */
 }
 .triengle {
-    background-image: url(rsschool-cv/pictures/backgTraengle.jpg);
+    background-image: url(/rsschool-cv/pictures/backgTraengle.jpg);
     width: 90%;
     background-position: 0 0;
     background-repeat: no-repeat;
@@ -148,7 +148,7 @@ main h3 {
 }
 
 .pointer {
-    background-image: url(rsschool-cv/pictures/bro.jpg);
+    background-image: url(/rsschool-cv/pictures/bro.jpg);
     width: 90%;
     background-position: 0 0;
     background-repeat: no-repeat;
@@ -176,13 +176,18 @@ main h3 {
     padding: 5% 0% 5% 15%;
     line-height: 50px;
 }
+#contacts ul {
+    margin: 0px;
+    padding: 0px;
+        list-style: none;
+    }
 
 .icon p{
     display: inline-block;
     line-height: 150%;
     text-align: center;
-    width: 70%;
-    font-size: 25px;
+    width: 80%;
+    font-size: 22px;
     margin: 0px;
     margin-left: 10px;
     padding: 5px 0px 0px 0px;
@@ -208,6 +213,12 @@ main h3 {
     color: black;
     
 }
+
+#code {
+    background: linear-gradient(90deg, rgba(255, 255,255, 0.65) 70%, transparent);
+    
+}
+
 .grid-container-pic {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
