@@ -3,6 +3,25 @@ font-family: 'Comfortaa', cursive; */
 
 html {
     scroll-behavior: smooth;
+
+    --index:1;
+
+    --fontH1: calc(58px*(var(--index)));
+    --fontH2: calc(28px*(var(--index)));
+    --fontH3: calc(35px*(var(--index)));
+    --fontP: calc(22px*(var(--index)));
+
+    --lineH_H1: calc(90px*(var(--index)));
+    --lineH_H3: calc(80px*(var(--index)));
+    --lineH_P: calc(35px*(var(--index)));
+    
+
+    --coolLetterSpasing: 2px;
+    --gridPartPadding: 30px 30px;
+    --myHeadAche: calc(500px-var(--lineH_P)- (500px/3))
+
+    --widthText: 80%;
+    --widthBackground: 90%;
 }
 
 * {
@@ -11,7 +30,7 @@ html {
 }
 
 body {
-    background-image: url(/rsschool-cv/pictures/background.jpg);
+    background-image: url(pictures/background.jpg);
     z-index: 1;
 }
 
@@ -21,8 +40,7 @@ body {
      /* position: relative; */
      max-width: 80%;
      margin: 0 auto;
-    padding-left: 25px;
-    padding-right:25px;
+    padding: 0px 25px;
 
      background-color: rgba(255, 255, 255, 0.4); 
  }
@@ -34,15 +52,12 @@ position: relative;
 background-color:rgba(255, 255, 255, 0.6) ;
  }
 
- /* img[src*="rs_school"]{
-    border: 1px solid salmon;
- } */
-
  nav {
     float: right;
     max-width: 1500px;
     height: 20px;
-    letter-spacing: 3px;
+
+    letter-spacing: var(--coolLetterSpasing);
 }
 
 nav ul {
@@ -61,11 +76,11 @@ nav ul li a {
     font-family: 'Comfortaa', cursive;
     font-style: normal;
     font-weight: 800;
-    font-size: 18px ;
+    font-size: calc(var(--fontP) - 3px) ;
     color: brown;
     text-decoration: none;
     text-align: center;
-    line-height: 40px;
+    line-height: var(--fontP);
 
     border: 5px solid white;
     border-radius: 10%;
@@ -76,56 +91,78 @@ nav ul li a {
     display:grid;
     grid-template-columns: 1fr 1fr;
     /* justify-items: stretch; */
-    grid-gap: 20px;
-    align-items: center;
-    grid-auto-rows: minmax(250px, auto);
+    grid-gap: 10px;
+    align-items: start;
+    grid-auto-rows: minmax(300px, auto);
+    grid-auto-columns: minmax(300px, auto);
     /* border:2px solid brown; */
+}
+.mainText{
+    align-self: center;
 }
 
  h1 {
     font-family: 'Arvo', serif;
-    font-size: 70px;
-    line-height: 110px;
+    font-size: var(--fontH1);
+    line-height: var(--lineH_H1);
     text-align: center;
+    /* padding-top: 9%; */
  }
 
-h1 span.import {
+h1 span.import{
     display: inline-block;
+    padding: 5px 10px;
+    font-size: calc(var(--fontH1) + 2px);
+
     color: white;
+
     border-radius: 5px;
     mix-blend-mode: multiply;
-    padding: 5px 10px;
-     background: linear-gradient(180deg, white 15%, brown 75%, white);  
-     
+    background: linear-gradient(180deg, white 15%, brown 75%, white);  
+ }
+  h2 span.import{
+    color: white;
+    mix-blend-mode: multiply;
+    background: linear-gradient(180deg, white 10%, brown 75%);  
  }
 
 h2.important {
     display: inline-block;
     font-family: 'Comfortaa', cursive; 
-    font-size: 28px;
+    font-size: var(--fontH2);
     padding: 3% 10%;
-
+    text-align: justify;
 }
+
+#mainPhoto{
+margin: 8% 2%;
+max-width: 700px;
+min-width: 150px;
+padding-left: 18%;
+/* align-self: end; */
+/* border: 5px solid rgba(165, 42, 42,0.5); */
+}
+
 main h3 {
     display: inline-block;
     font-family: 'Arvo', serif;
-    font-size: 35px;
-    line-height: 80px;
-    width: 70%;
+    font-size: var(--fontH3);
+    line-height: var(--lineH_H3);
+    width: var( --widthText);
     background-color: rgba(255, 255, 255, .5);
-    padding-left:13%;
+    padding:0px 13%;
     border-top-right-radius: 20% ;
     border-bottom-right-radius: 20% ;
 }
 
 .grid-part {
-    padding: 30px 50px;
+    padding: var(--gridPartPadding);
     position: relative;
     /* grid-auto-rows: minmax(300px, auto); */
 }
 .triengle {
-    background-image: url(/rsschool-cv/pictures/backgTraengle.jpg);
-    width: 90%;
+    background-image: url(pictures/backgTraengle.jpg);
+    width: var(--widthBackground);
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: cover; 
@@ -135,10 +172,10 @@ main h3 {
 
 .grid-part p, .grid-part ul {
     font-family: 'Comfortaa', cursive; 
-    font-size: 24px;
-    letter-spacing: 2px;
+    font-size: var(--fontP);
+    letter-spacing: var(--coolLetterSpasing);
     font-weight: 800;
-    line-height: 45px;
+    line-height: var(--lineH_P);
 
     padding: 3% 3% 1% 5%;
     margin: 0% 10% 0% 0%;
@@ -148,92 +185,96 @@ main h3 {
 }
 
 .pointer {
-    background-image: url(/rsschool-cv/pictures/bro.jpg);
-    width: 90%;
+     width: var(--widthBackground);
+
+     background-image: url(pictures/bro.jpg);
+     background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover; 
+
+    border-top-right-radius: 35%;
+    border-bottom: 5px solid gainsboro; 
+  }
+  
+
+.grid-part ul {
+    padding: 5% 0% 5% 10%;
+    line-height: var(--lineH_P);
+    
+}
+#contacts ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    }
+
+.icon p{
+    display: inline-block;
+
+    width: var(--widthText);
+
+    margin: 0px;
+    margin-left: 10px;
+    padding: 5px 0px 0px 0px;
+
+    line-height: 1.5em;
+    text-align: center;
+    font-size: var(--fontP);
+    
+}
+
+
+.icon img[src*="mail"], .icon img[src*="vk"], .icon img[src*="discord"],.icon img[src*="phone"] {
+    width: 9%;
+    height: 10%;
+    padding-left: 10px;
+
+    border-radius: 50%  50%;
+}
+
+
+.icon img[src*="git"] {
+    width: 9%;
+    height: 10%;
+    padding-left: 10px; 
+
+    border-radius: 50%;
+}
+.icon a {
+    color: black;
+    text-decoration: none;
+}
+
+#code {
+   
+    background-image: url(pictures/bro.jpg); 
+    background: linear-gradient(90deg, rgba(255, 255,255, 0.65) 70%, transparent);
+    width: var(--widthBackground);
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size: cover; 
     border-top-right-radius: 35%;
     border-bottom: 5px solid gainsboro; 
-  }
-  
-  .grid-part table {
-    font-family: 'Comfortaa', cursive; 
-    font-size: 24px;
-    letter-spacing: 2px;
-    font-weight: 800;
-    line-height: 35px;
-
-    padding: 3% 3% 5% 5%;
-    margin: 0% 10% 0% 0%;
-    /* display: block; */
-    background: linear-gradient(90deg, rgba(255, 255,255, 0.65) 70%, transparent);
-    border-collapse: separate;
-    border-spacing: 50px 20px;
-}
-
-.grid-part ul {
-    padding: 5% 0% 5% 15%;
-    line-height: 50px;
-}
-#contacts ul {
-    margin: 0px;
-    padding: 0px;
-        list-style: none;
-    }
-
-.icon p{
-    display: inline-block;
-    line-height: 150%;
-    text-align: center;
-    width: 80%;
-    font-size: 22px;
-    margin: 0px;
-    margin-left: 10px;
-    padding: 5px 0px 0px 0px;
-}
-
-
-.icon img[src*="mail"], .icon img[src*="vk"], .icon img[src*="discord"],.icon img[src*="phone"] {
-    width: 10%;
-    height: 10%;
-    border-radius: 50%  50%;
-    padding-left: 10px;
-}
-
-
-.icon img[src*="git"] {
-    width: 10%;
-    height: 10%;
-    border-radius: 50%;
-    padding-left: 10px;
-}
-.icon a {
-    text-decoration: none;
-    color: black;
-    
-}
-
-#code {
-    background: linear-gradient(90deg, rgba(255, 255,255, 0.65) 70%, transparent);
     
 }
 
 .grid-container-pic {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+
     align-items: center;
     justify-items: center;
 }
 
 figure>img[src$="DSC_0036.JPG"], figure>img[src$="DSC_0003.JPG"] {
-    width: 85%;
+    width: 90%;
     border-top-right-radius: 100% 20%;
 }
 figure>img[src$="DSC_0029.JPG"] {
     width: 95%;
-    border-top-right-radius: 100% 20%;
-    padding-bottom: 135px;
+    padding-bottom: var(--myHeadAche);
+
+     border-top-right-radius: 100% 20%;
 }
 
 footer .flex-container {
@@ -241,13 +282,114 @@ footer .flex-container {
     justify-content: space-between;
     align-items: center;
 }
+
 footer p{
-    font-family: 'Arvo', serif;
-    font-size: 40px;
-    line-height: 110px;
-    text-align: center;
-  
     padding: 0px;
     margin: 0px;
+
+    font-family: 'Arvo', serif;
+    font-size: var(--fontH3);
+    line-height: var(--lineH_H1);
+    text-align: center; 
     /* border: 1px solid salmon; */
+}
+
+@media (max-width: 1630px){
+html{
+    --index: 0.85;
+}
+}
+
+@media (max-width: 1380px){
+    
+    html{
+        --index: 0.65;
+    }
+    #mainPhoto{
+        width: 70%;
+    }
+}
+
+@media (max-width: 1050px){
+    nav{
+        display: none;
+    }
+    html{
+        --index: 0.5;
+    }
+}
+
+@media (max-width: 768px){
+    html{
+        --index: 0.6;
+        --widthText: 60%;
+       --widthBackground: 100%;
+    }
+    .grid-container{
+        grid-template-columns: 1fr;  
+        align-items: center;
+        justify-content: center;
+        grid-auto-rows: auto;
+        /* margin: 0px auto; */
+    }
+    #mainPhoto{
+        width: 60%;
+        margin: 3% auto;
+        /* padding: 0px 18% ; */
+        /* align-self: center; */
+    }
+    .grid-part p, .grid-part ul{
+    padding: 2% 3% 1% 10%;
+    margin: 0% 1% 0% 0%;
+    }
+    main h3 {
+        padding:0px 13%;
+    }
+    h2.important {
+        padding: 3% 4%;
+    }
+    .triengle, .pointer{
+        border-bottom: 3px solid gainsboro;
+    }
+
+}
+
+@media (max-width: 450px){
+    html{
+        --index: 0.45;
+        --widthText: 60%;
+       --widthBackground: 100%;
+    }
+    .grid-container{
+        grid-template-columns: 1fr;  
+        align-items: center;
+        justify-content: center;
+        
+    }
+    #mainPhoto{
+        width: 60%;
+        margin: 3% auto;
+        /* padding: 0px 18% ; */
+        /* align-self: center; */
+    }
+    .triengle, .pointer{
+        border-bottom: 3px solid gainsboro;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .grid-part{
+        margin: 0px 10%;
+    }
+    .grid-part p, .grid-part ul{
+    padding: 2% 3% 1% 10%;
+    margin: 0% 1% 0% 0%;
+    }
+    main h3 {
+        padding:0px 13%;
+    }
+    h2.important {
+        padding: 3% 4%;
+    }
 }

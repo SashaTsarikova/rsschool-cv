@@ -19,7 +19,7 @@
 
         <header>
 <div class="container">
-    <a href="https://rs.school/js/"><img src="/rsschool-cv/Lables/rs_school_js.svg" 
+    <a href="https://rs.school/js/"><img src="Lables/rs_school_js.svg" 
         alt="curse logo" width="6%" ></a>
 <nav>
 <ul>
@@ -39,21 +39,21 @@
         <div class="container">
 
 <div class="grid-container">
-    <div> 
+    <div class="mainText"> 
         <h1>Hi! I am <br><span class="import"> Sasha</span> <span class="import"> Tsarikova</span> </h1>
         <h2 class="important">If you want to know me better this is a right page to view.
                         I'm trying to become better as on professional side as on personal one.
-                        I'm a begginer in front-end development althow I inspired to get to top of it</h2>
+                        I'm a <span class="import">begginer in front-end development</span> althow I inspired to get to top of it</h2>
     </div>
-    <div id="mainPhoto"><img src="/rsschool-cv/pictures/mainPhoto.jpg" width="60%"  alt="main photo"></div>
-</div>
+    <div id="mainPhoto"><img src="pictures/mainPhoto.jpg" width="80%"  alt="main photo"></div>
+<!-- </div>
 
-<div class="grid-container">
+<div class="grid-container"> -->
 
     <div class="grid-part" id="about">
         <h3> About me</h3>
         <div class="triengle">
-<p> My motherhood is the Republik of Belarus (Pinsk).</p>
+<p> My motherhood is the Republic of Belarus (Pinsk).</p>
 <p> Now I'm living in Minsk.</p>
 <p> I'm 24.</p>
         </div>
@@ -73,42 +73,35 @@
         <h3> Key skills</h3>
 <div class="triengle">
 
-      <table><tr>
-<td rowspan="4">BASICS of</td> <td><mark>HTML/CSS</mark></td>
-</tr>
-<tr> 
-<td>PHP</td>
-</tr>
-<tr> 
-<td>MySQL, SQL</td>
-</tr>
-<tr> 
-<td><mark>JavaScript</mark></td>
-</tr>
-</table>
+      <p> For today I posess basic knowlage of </p>
+      <ul>
+        <li> PHP</li>
+        <li>HTML/CSS</li>
+        <li>MySQL, SQL</li>
+        <li>JavaScript</li>
+      </ul>
+
 </div>
     </div>
 
 <div class="grid-part">
     <h3> Code example</h3>  
-    <div class="pointer" id="code">
-        <pre>
+    <div class="pointer .code" id="code">
 
-    function spinWords(string){
-        if (string.indexOf(' ')){
-        let arr=string.split(" ");
-        for (let i=0; i<arr.length; i++) {
-            if (String(arr[i]).length>=5){
-            arr[i]=String(arr[i]).split('').reverse().join(''); 
-            }
-        }  return arr.join(' ');
-            } else { if (string.length>=5){
-            string=string.split('').reverse().join('');
-            return string;
-        }
-        }
+    function spinWords(string){<br>
+        if (string.indexOf(' ')){<br>
+        let arr=string.split(" ");<br>
+        for (let i=0; i<arr.length; i++) { <br>
+            if (String(arr[i]).length>=5){<br>
+            arr[i]=String(arr[i]).split('').reverse().join(''); <br>
+            }<br>
+        }  return arr.join(' ');<br>
+            } else { if (string.length>=5){<br>
+            string=string.split('').reverse().join('');<br>
+            return string;<br>
+        }<br>
+        }<br>
         
-        </pre>
     </div>
 </div>
 
@@ -136,11 +129,11 @@
         <h3> Contacts</h3>
  <div class="pointer">  
      <ul> 
-    <li><div class="icon"> <img src="/rsschool-cv/Lables/phone.png" > <p> + 375 29 111 07 26</p></div></li>
-    <li><div class="icon"> <img src="/rsschool-cv/Lables/mail.png" ><p>sashatsarikova@mail.ru</p></div></li>
-    <li><div class="icon"> <a href="https://github.com/SashaTsarikova"><img src="/rsschool-cv/Lables/git-hubq.png" ><p>SashaTsarikova</p></a></div></li>
-    <li><div class="icon"> <a href="https://discord.com/channels"><img src="/rsschool-cv/Lables/discord1.png" ><p>Aleksandra(@sashatsarikova)</p></a></div> </li>
-     <li><div class="icon"> <a href="https://vk.com/id128962576"><img src="/rsschool-cv/Lables/vk.png"><p>VK account</p></a></div></li>
+    <li><div class="icon"> <img src="Lables/phone.png" > <p> + 375 29 111 07 26</p></div></li>
+    <li><div class="icon"> <img src="Lables/mail.png" ><p>sashatsarikova@mail.ru</p></div></li>
+    <li><div class="icon"> <a href="https://github.com/SashaTsarikova"><img src="Lables/git-hubq.png" ><p>SashaTsarikova</p></a></div></li>
+    <li><div class="icon"> <a href="https://discord.com/channels"><img src="Lables/discord1.png" ><p>Aleksandra(@sashatsarikova)</p></a></div> </li>
+     <li><div class="icon"> <a href="https://vk.com/id128962576"><img src="Lables/vk.png"><p>VK account</p></a></div></li>
     </ul>
     </div></div>
 
@@ -150,16 +143,16 @@
 <div class="pointer">
     <div class="grid-container-pic">
     <figure>
-        <img src="/rsschool-cv/pictures/DSC_0036.JPG" >
+        <img src="pictures/DSC_0036.JPG" >
         <figcaption><p> Humor</p></figcaption>
     </figure>
     
     <figure>
-            <img src="/rsschool-cv/pictures/DSC_0029.JPG" >
+            <img src="pictures/DSC_0029.JPG" >
             <figcaption><p>Music</p> </figcaption>
     </figure>
     <figure>
-        <img src="/rsschool-cv/pictures/DSC_0003.JPG">
+        <img src="pictures/DSC_0003.JPG">
         <figcaption> <p>Sport</p></figcaption>
     </figure>
 </div>
@@ -175,12 +168,14 @@
     <footer>
         <div class="container">
             <div class="flex-container">
-            <a href="https://rs.school/js/"><img src="/rsschool-cv/Lables/rs_school_js.svg" alt="curse logo" width="35%"></a>
+            <a href="https://rs.school/js/"><img src="Lables/rs_school_js.svg" alt="curse logo" width="80px"></a>
                        <p>2021</p>
-       <a href="https://www.youtube.com/c/RollingScopesSchool"><img src="/rsschool-cv/Lables/YouTube_full-color_icon_(2017).svg" width="90%"></a>
+       <a href="https://www.youtube.com/c/RollingScopesSchool"><img src="Lables/YouTube_full-color_icon_(2017).svg" width="90px"></a>
     </div>   
     </div>
     </footer>
-
+   
+    
+    
 </body>
 </html>
