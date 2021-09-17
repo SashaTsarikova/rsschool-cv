@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="links/styles/base16/solarized-dark.min.css">
     <title>Sasha's CV</title>
 </head>
 <body>
@@ -21,7 +22,25 @@
 <div class="container">
     <a href="https://rs.school/js/"><img src="Lables/rs_school_js.svg" 
         alt="curse logo" width="6%" ></a>
+
 <nav>
+
+    <div class="burger-menu">
+        <input id="menu-toggle" type="checkbox" />
+        <label class="menu-btn" for="menu-toggle">
+          <span></span>
+        </label>
+     
+        <ul class="menubox">
+                <li><a class="menu-item" href="#about">General information</a></li>
+                <li><a class="menu-item" href="#education">Education</a></li>
+                <li><a class="menu-item" href="#skills">Skills and personal qualities</a></li>
+                <li><a class="menu-item" href="#contacts">Contacts</a></li>
+                <li><a class="menu-item" href="#hobby">Hobby</a></li>
+        </ul>
+      </div>
+
+  <div class="standart-menu">
 <ul>
     <li><a href="#about">General information</a></li>
     <li><a href="#education">Education</a></li>
@@ -29,6 +48,7 @@
     <li><a href="#contacts">Contacts</a></li>
     <li><a href="#hobby">Hobby</a></li>
   </ul>
+</div>
 </nav>
 </div>
     </header>
@@ -86,22 +106,26 @@
 
 <div class="grid-part">
     <h3> Code example</h3>  
-    <div class="pointer .code" id="code">
+    <div class="pointer" id="code">
+  <p>Task: <br> Write a function that takes in a string of one or more words, 
+    and returns the same string, but with all five or more letter words reversed </p>    
 
-    function spinWords(string){<br>
-        if (string.indexOf(' ')){<br>
-        let arr=string.split(" ");<br>
-        for (let i=0; i<arr.length; i++) { <br>
-            if (String(arr[i]).length>=5){<br>
-            arr[i]=String(arr[i]).split('').reverse().join(''); <br>
-            }<br>
-        }  return arr.join(' ');<br>
-            } else { if (string.length>=5){<br>
-            string=string.split('').reverse().join('');<br>
-            return string;<br>
-        }<br>
-        }<br>
-        
+    <pre><code class="lenguage-js">
+function spinWords(string){
+  if (string.indexOf(' ')){
+    let arr=string.split(" ");
+     for (let i=0; i<arr.length; i++) { 
+    if (String(arr[i]).length>=5){
+    arr[i]=String(arr[i]).split('').reverse().join(''); 
+    }
+  }  return arr.join(' ');
+  } else { if (string.length>=5){
+    string=string.split('').reverse().join('');
+  return string;
+  }
+}
+</code>     </pre>  
+
     </div>
 </div>
 
@@ -176,6 +200,7 @@
     </footer>
    
     
-    
+ <script src="links/highlight.min.js"> </script>   
+ <script>hljs.highlightAll();</script>
 </body>
 </html>

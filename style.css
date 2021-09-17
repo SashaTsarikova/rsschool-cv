@@ -18,7 +18,7 @@ html {
 
     --coolLetterSpasing: 2px;
     --gridPartPadding: 30px 30px;
-    --myHeadAche: calc(500px-var(--lineH_P)- (500px/3))
+
 
     --widthText: 80%;
     --widthBackground: 90%;
@@ -46,7 +46,7 @@ body {
  }
 
  header .container,  footer .container {
-padding: 25px;
+padding: 2% 25px;
 position: relative;
 /* height: 15%; */
 background-color:rgba(255, 255, 255, 0.6) ;
@@ -55,7 +55,7 @@ background-color:rgba(255, 255, 255, 0.6) ;
  nav {
     float: right;
     max-width: 1500px;
-    height: 20px;
+    /* height: 10px; */
 
     letter-spacing: var(--coolLetterSpasing);
 }
@@ -85,7 +85,102 @@ nav ul li a {
     border: 5px solid white;
     border-radius: 10%;
     background-color: white;
+
+    cursor: pointer;
 }
+
+                        /* для буршер меню */
+.menu-btn{
+    display: none;
+    align-items: center;
+
+    position: absolute;
+    top: 8px;
+    right:3%;
+    width: 26px;
+    height: 26px;
+
+    cursor: pointer;
+    z-index: 1;
+  }
+   
+  .menu-btn > span,
+  .menu-btn > span::before,
+  .menu-btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #272626;
+    transition-duration: .25s;
+  }
+  .menu-btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu-btn > span::after {
+    content: '';
+    top: 8px;
+  }
+   
+  .menubox{
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    right: -100%;
+    width: 180px;
+    height: auto;
+    margin: 0;
+    padding: 20px 5px 20px 0px;
+    margin-right: 7%;
+    list-style: none;
+    background-color: #ECEFF1;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    transition-duration: .25s;
+  }
+   
+  .menu-item {
+    display: block;
+    /* padding: 12px 24px; */
+    /* color: brown;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600; */
+    text-decoration: none;
+    transition-duration: .25s;
+  }
+  .menu-item:hover {
+    background-color: #CFD8DC;
+  }
+   
+   
+  #menu-toggle{
+    opacity: 0;
+  }
+   
+  #menu-toggle:checked ~ .menu-btn > span{
+    transform: rotate(45deg);
+  }
+  #menu-toggle:checked ~ .menu-btn > span::before{
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu-toggle:checked ~ .menu-btn > span::after{
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu-toggle:checked ~ .menubox{
+    visibility: visible;
+    top: 40px;
+    right: 0;
+  }
+
+                        /* для буршер меню */
+
+
+
+
 
 .grid-container {
     display:grid;
@@ -148,7 +243,7 @@ main h3 {
     font-family: 'Arvo', serif;
     font-size: var(--fontH3);
     line-height: var(--lineH_H3);
-    width: var( --widthText);
+    width: calc(var( --widthText) - 25%);
     background-color: rgba(255, 255, 255, .5);
     padding:0px 13%;
     border-top-right-radius: 20% ;
@@ -180,8 +275,16 @@ main h3 {
     padding: 3% 3% 1% 5%;
     margin: 0% 10% 0% 0%;
     display: block;
-    background: linear-gradient(90deg, rgba(255, 255,255, 0.65) 70%, transparent);
+    background: linear-gradient(90deg, rgba(255, 255,255, 0.65) 90%, transparent);
     
+}
+
+#contacts p{
+    text-align: left;
+    width: 50%;
+    /* padding: 3% 3% 1% 5%;
+    margin: 0% 10% 0% 0%; */
+
 }
 
 .pointer {
@@ -245,17 +348,20 @@ main h3 {
     text-decoration: none;
 }
 
-#code {
-   
-    background-image: url(pictures/bro.jpg); 
-    background: linear-gradient(90deg, rgba(255, 255,255, 0.65) 70%, transparent);
-    width: var(--widthBackground);
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-size: cover; 
-    border-top-right-radius: 35%;
-    border-bottom: 5px solid gainsboro; 
-    
+code {
+   padding: 0px 3% 0px 3%;
+   width: 80%;
+    margin: 0px auto;
+    overflow: hidden;
+    /* background: linear-gradient(90deg, rgba(255, 255,255, 0.65) 70%, transparent); */
+} 
+#code p{
+    font-size: calc(22px * (var(--index)) - 3px);
+    line-height: calc(35px * (var(--index)) - 7px* (var(--index)));
+}
+#code pre {
+    font-size: calc(22px * (var(--index)) - 7px * (var(--index)));
+    line-height: calc(35px * (var(--index)) - 15px * (var(--index)));
 }
 
 .grid-container-pic {
@@ -311,20 +417,43 @@ html{
 }
 
 @media (max-width: 1050px){
-    nav{
+    nav .standart-menu {
         display: none;
     }
+    nav .menu-btn {
+        display: flex;
+    }
+    nav ul li {
+    display: block;
+}
+nav ul li a {
+    text-align: left;
+    padding-left: 5%;
+}
+
     html{
         --index: 0.5;
+    }
+footer img[src*="rs_school"]{
+    width: calc(100px * var(--index));
+    }
+footer img[src*="YouTube"]{
+    width: calc(90px * var(--index));
     }
 }
 
 @media (max-width: 768px){
     html{
-        --index: 0.6;
+        --index: 0.55;
         --widthText: 60%;
        --widthBackground: 100%;
+       --gridPartPadding: 30px 15px;
     }
+  
+    header img {
+        width: 20%;
+    }
+   
     .grid-container{
         grid-template-columns: 1fr;  
         align-items: center;
@@ -351,20 +480,17 @@ html{
     .triengle, .pointer{
         border-bottom: 3px solid gainsboro;
     }
+    
 
 }
 
 @media (max-width: 450px){
     html{
-        --index: 0.45;
-        --widthText: 60%;
-       --widthBackground: 100%;
+        --index: 0.35;
+        --widthText: 70%
     }
-    .grid-container{
-        grid-template-columns: 1fr;  
-        align-items: center;
-        justify-content: center;
-        
+    header img {
+        width: 21%;
     }
     #mainPhoto{
         width: 60%;
@@ -372,15 +498,16 @@ html{
         /* padding: 0px 18% ; */
         /* align-self: center; */
     }
-    .triengle, .pointer{
-        border-bottom: 3px solid gainsboro;
-        padding-top: 0px;
-        padding-bottom: 0px;
-        margin-top: 0px;
-        margin-bottom: 0px;
+    .grid-container{
+        grid-template-columns: 1fr;  
+        align-items: center;
+        justify-content: center;
+        grid-auto-rows: auto;
+        /* margin: 0px auto; */
     }
+
     .grid-part{
-        margin: 0px 10%;
+        margin: 0px 5%;
     }
     .grid-part p, .grid-part ul{
     padding: 2% 3% 1% 10%;
@@ -388,8 +515,14 @@ html{
     }
     main h3 {
         padding:0px 13%;
+        width: calc(var( --widthText) - 15%);
     }
     h2.important {
         padding: 3% 4%;
+        margin: 0px 5%;
+        box-sizing: content-box;
+    }
+    .icon img {
+        padding-left: 2px;
     }
 }
