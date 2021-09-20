@@ -423,7 +423,8 @@ html{
     --index: 0.85;
 }
 iframe {
-    height: 450px;
+    width: calc(1100px * var(--index));
+    height: calc(600px * var(--index));
 }
 footer img[src*="rs_school"], header img[src*="rs_school"]{
     width: calc(100px * var(--index));
@@ -435,9 +436,7 @@ footer img[src*="rs_school"], header img[src*="rs_school"]{
     html{
         --index: 0.65;
     }
-    iframe {
-        height: 350px;
-    }
+
     footer img[src*="rs_school"], header img[src*="rs_school"]{
     width: calc(100px * var(--index));
     }
@@ -459,8 +458,9 @@ nav ul li a {
 }
 
 iframe {
-        height: 280px;
-    }
+    width: calc(1100px * var(--index) - 450px * var(--index));
+    height: calc(600px * var(--index) - 180px * var(--index));
+}
 
     html{
         --index: 0.5;
