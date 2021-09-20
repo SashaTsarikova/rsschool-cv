@@ -360,10 +360,20 @@ code {
     overflow: hidden;
     /* background: linear-gradient(90deg, rgba(255, 255,255, 0.65) 70%, transparent); */
 } 
-#code p{
+
+#code article{
+    font-family: 'Comfortaa', cursive; 
+    font-weight: 800;
     font-size: calc(22px * (var(--index)) - 3px);
     line-height: calc(35px * (var(--index)) - 7px* (var(--index)));
+    padding: 3% 3% 1% 5%;
+    margin: 0% 10% 0% 0%;
+    display: block;
+    background: linear-gradient(90deg, rgba(255, 255,255, 0.65) 90%, transparent);
+
+    
 }
+
 #code pre {
     font-size: calc(22px * (var(--index)) - 7px * (var(--index)));
     line-height: calc(35px * (var(--index)) - 15px * (var(--index)));
