@@ -231,11 +231,16 @@ h2.important {
 
 #mainPhoto{
 margin: 8% 2%;
+/* width: calc(777px*var(--index) - 500px*var(--index)); */
 max-width: 700px;
 min-width: 150px;
-padding-left: 18%;
+padding-left: calc(18% * var(--index));
 /* align-self: end; */
 /* border: 5px solid rgba(165, 42, 42,0.5); */
+}
+
+#mainPhoto img{
+width: calc(777px*var(--index) - 300px*var(--index));
 }
 
 main h3 {
@@ -420,6 +425,9 @@ html{
 iframe {
     height: 450px;
 }
+footer img[src*="rs_school"], header img[src*="rs_school"]{
+    width: calc(100px * var(--index));
+    }
 }
 
 @media (max-width: 1380px){
@@ -427,11 +435,11 @@ iframe {
     html{
         --index: 0.65;
     }
-    #mainPhoto{
-        width: 70%;
-    }
     iframe {
         height: 350px;
+    }
+    footer img[src*="rs_school"], header img[src*="rs_school"]{
+    width: calc(100px * var(--index));
     }
 }
 
@@ -457,7 +465,7 @@ iframe {
     html{
         --index: 0.5;
     }
-footer img[src*="rs_school"]{
+footer img[src*="rs_school"], header img[src*="rs_school"]{
     width: calc(100px * var(--index));
     }
 footer img[src*="YouTube"]{
@@ -474,9 +482,6 @@ footer img[src*="YouTube"]{
        --gridPartPadding: 30px 15px;
     }
   
-    header img {
-        width: 20%;
-    }
    
     .grid-container{
         grid-template-columns: 1fr;  
@@ -486,10 +491,8 @@ footer img[src*="YouTube"]{
         /* margin: 0px auto; */
     }
     #mainPhoto{
-        width: 60%;
-        margin: 3% auto;
-        /* padding: 0px 18% ; */
-        /* align-self: center; */
+    margin: 3% auto;
+    padding-left: 0px;
     }
     .grid-part p, .grid-part ul{
     padding: 2% 3% 1% 10%;
@@ -515,13 +518,10 @@ footer img[src*="YouTube"]{
         --index: 0.35;
         --widthText: 70%
     }
-    header img {
-        width: 21%;
-    }
+  
     #mainPhoto{
-        width: 60%;
         margin: 3% auto;
-        /* padding: 0px 18% ; */
+        padding-left: 0px;
         /* align-self: center; */
     }
     .grid-container{
