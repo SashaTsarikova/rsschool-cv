@@ -383,6 +383,19 @@ figure>img[src$="DSC_0029.JPG"] {
      border-top-right-radius: 100% 20%;
 }
 
+#video {
+    padding: 6% 0px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+#video h3{
+    width: 50%;
+    border-top-right-radius: 0% ;
+    border-bottom-right-radius:0% ;
+    margin: 1%;
+}
+
 footer .flex-container {
     display: flex;
     justify-content: space-between;
@@ -404,6 +417,9 @@ footer p{
 html{
     --index: 0.85;
 }
+iframe {
+    height: 450px;
+}
 }
 
 @media (max-width: 1380px){
@@ -413,6 +429,9 @@ html{
     }
     #mainPhoto{
         width: 70%;
+    }
+    iframe {
+        height: 350px;
     }
 }
 
@@ -431,6 +450,10 @@ nav ul li a {
     padding-left: 5%;
 }
 
+iframe {
+        height: 280px;
+    }
+
     html{
         --index: 0.5;
     }
@@ -440,6 +463,7 @@ footer img[src*="rs_school"]{
 footer img[src*="YouTube"]{
     width: calc(90px * var(--index));
     }
+    
 }
 
 @media (max-width: 768px){
@@ -480,7 +504,9 @@ footer img[src*="YouTube"]{
     .triengle, .pointer{
         border-bottom: 3px solid gainsboro;
     }
-    
+    iframe {
+        height: 180px;
+    }
 
 }
 
@@ -524,5 +550,8 @@ footer img[src*="YouTube"]{
     }
     .icon img {
         padding-left: 2px;
+    }
+    iframe {
+        height: 150px;
     }
 }
